@@ -29,7 +29,8 @@ async function selectCustomer(id) {
 
 async function selectCustomers() {
     const client = await connect();
-    const res = await client.query("SELECT * FROM clientes");
+    const res = await client.query
+    ("select clientes.id, clientes.nome, clientes.idade, uf.unidade_fiscal from clientes inner join uf on clientes.uf_id = uf.id");
     return res.rows;
 }
 
