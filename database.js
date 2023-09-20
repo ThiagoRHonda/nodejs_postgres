@@ -16,7 +16,7 @@ async function connect() {
     client.release();
 
     global.connection = pool;
-    return pool.connect();
+    return pool.connect(); //TESTE
 }
 
 connect();
